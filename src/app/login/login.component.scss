@@ -1,0 +1,14 @@
+.container{
+    width: 100%;
+    position: relative;
+    top: 65px;
+    display: flex;
+    justify-content: center;
+    height: 543px;
+    align-items: center;
+}
+.innerbox{
+    box-shadow:rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 40px 80px;
+    border-radius: 10px;
+}

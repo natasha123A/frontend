@@ -1,0 +1,26 @@
+<app-header></app-header>
+<div class="container">
+    <div class="innerbox">
+        <form #loginform="ngForm" (ngSubmit)="getdata(loginform.value)" >
+            <div class="mb-3 ">
+                <label for="exampleFormControlInput1" class="form-label">Useranme</label>
+                <input type="text" required #name="ngModel" name="username" class="form-control" id="exampleFormControlInput1" ngModel placeholder="john">
+                <div style="color: red;font-size: 14px;white-space: nowrap;" *ngIf="name.touched && name.invalid">
+                    Useranme is required
+                </div>
+            </div>
+            <div class="mb-3 ">
+                <label for="inputPassword" class="form-label">Password</label>
+
+                <input type="password" required #pswd="ngModel" name="password" class="form-control" ngModel id="inputPassword">
+                <div style="color: red;font-size: 14px;white-space: nowrap;" *ngIf="pswd.touched && pswd.invalid">
+                    Invalid Password (Min size is 8)
+                </div>
+
+            </div>
+
+            <button [disabled]="loginform.invalid" type="submit" class="btn btn-dark">Log-In</button>
+
+        </form>
+    </div>
+</div>

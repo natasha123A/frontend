@@ -1,0 +1,37 @@
+.container-fluid{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 40px;
+    height: 65px;
+    position: fixed;
+    top: 0;
+    background-color: #212529;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    z-index: 10;
+}
+.searchbutton{
+    background-color: transparent ;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    
+}
+h5{
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    flex-grow: 1;
+    line-height: 1;
+    padding-top: 7px;
+}
+.filter{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 10px;
+}
+label{
+    color: #fff;
+}

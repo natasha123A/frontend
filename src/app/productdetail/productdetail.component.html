@@ -1,0 +1,30 @@
+<app-header></app-header>
+<div class="contianer-fluid">
+    <img src={{product.image}}>
+    <div class="details">
+        <h4>{{product.title}}</h4>
+        <h1>{{product.details}}</h1>
+        <span class="rating">
+            <h1>Rating</h1> - {{product.rating}}
+        </span>
+        <h4 class="price">Rs. {{product.price}}</h4>
+        <h1 class="delivery">DELIVERY OPTIONS</h1>
+        <form #pinform="ngForm" (ngSubmit)="getdata(pinform.value)">
+            <div class="input-group mb-3">
+                <input type="number" class="form-control" ngModel name="pincode" maxlength="6" placeholder="PIN Code"
+                    aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button class="btn btn-dark" type="submit" id="button-addon2">Check</button>
+            </div>
+            <div *ngIf="display">
+                <span *ngIf="delivery">
+                    <h4 class="available">Delivery Available</h4>
+                </span>
+                <span *ngIf="!delivery">
+                    <h4 class="unavailable"> Sorry Delivery Unavailable</h4>
+                </span>
+
+            </div>
+        </form>
+    </div>
+
+</div>

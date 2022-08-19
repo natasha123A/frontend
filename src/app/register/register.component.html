@@ -1,0 +1,46 @@
+<app-header></app-header>
+<div class="container">
+    <div class="innerbox">
+        <form #registerform="ngForm" (ngSubmit)="getUserData(registerform.value)" method="post" >            
+            <div class="input-group mb-3">
+                <div class="col-auto">
+                    <label  class="form-label">Email</label>
+                    <input type="email"  #email="ngModel"  name="email" ngModel class="form-control"  required placeholder="example@gmail.com">
+                    <div style="color: red;font-size: 14px;white-space: nowrap;" *ngIf="email.touched && email.invalid">
+                        Email is required
+                    </div>
+                </div>
+                &nbsp;&nbsp;
+                <div class="col-auto">
+                    <label  class="form-label">Useranme</label>
+                    <input type="text" #name="ngModel"  name="username" ngModel class="form-control"  required placeholder="">
+                    <div style="color: red;font-size: 14px;white-space: nowrap;" *ngIf="name.touched && name.invalid">
+                        Useranme is required
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="col-auto">
+                    <label  class="form-label">Password</label>
+                    <input type="password" #pswd="ngModel" minlength="8"  name="password" ngModel class="form-control" required  >
+                    <div style="color: red;font-size: 14px;white-space: nowrap;" *ngIf="pswd.touched && pswd.invalid">
+                        Invalid Password (Min size is 8)
+                    </div>
+                </div>
+                &nbsp;&nbsp;
+                <div class="col-auto">
+                    <label  class="form-label">Date Of Birth</label>
+                    <input type="date" name="dob" #dob="ngModel" ngModel class="form-control"  required >
+                    <div style="color: red;font-size: 14px;white-space: nowrap;" *ngIf="dob.touched && dob.invalid">
+                        D.O.B is required
+                    </div>
+                </div>
+                
+            </div>
+
+            <button [disabled]="registerform.invalid" type="submit" class="btn btn-dark">Register</button>
+        </form>
+    </div>
+</div>

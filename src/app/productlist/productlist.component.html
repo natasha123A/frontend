@@ -1,0 +1,20 @@
+<app-header></app-header>
+<div class="container">
+    
+    <div class="row g-3">
+        <div *ngFor="let item of products" class="col-12 col-sm-6 col-md-6 col-lg-4">
+            <div class="card">
+                <a routerLink="/product/{{item.id}}">
+                    <img src={{item.image}} class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.title}}</h5>
+                        <p class="card-text">{{item.details}}</p>
+                        <a href="#" class="btn btn-dark">View Price</a>
+                    </div>
+                </a>
+            </div>
+
+
+        </div>
+    </div>
+</div>

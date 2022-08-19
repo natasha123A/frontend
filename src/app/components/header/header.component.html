@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <h5 *ngIf="isLoggedin">Welocme {{username}}</h5>
+    <!-- <div class="filter"> -->
+    <div ngbDropdown class="d-inline-block">
+        <button type="button" style="background-color: #fff;color: black;" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{selected}}</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button ngbDropdownItem (click)="change(it)" *ngFor="let it of arr" >{{it}}</button>
+        </div>
+    </div>
+    <!-- </div> -->
+
+    <form #searchFrom="ngForm" (ngSubmit)="getWord(searchFrom.value)" class="d-flex">
+        <input class="form-control me-2 searchbox" type="search" name="searchword" ngModel placeholder="Search"
+            aria-label="Search">
+        <button class="btn btn-outline-success searchbutton" type="submit">Search</button>
+    </form>
+    <div *ngIf="!isLoggedin">
+        <button class="btn btn-outline-success searchbutton" (click)="gotoLogin()" type="submit">Log-In</button>
+        <button class="btn btn-outline-success searchbutton" (click)="gotoRegister()" type="submit">Register</button>
+    </div>
+    <div *ngIf="isLoggedin">
+        <button class="btn btn-outline-success searchbutton" (click)="logout()" type="button">Log-Out</button>
+    </div>
+</div>
